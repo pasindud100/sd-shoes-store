@@ -1,28 +1,14 @@
 import React, { useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
+import { Link } from "react-scroll";
 
 const Menu = [
-  {
-    id: 1,
-    name: "Home",
-    link: "/",
-  },
-  {
-    id: 2,
-    name: "Services",
-    link: "/services",
-  },
-  {
-    id: 3,
-    name: "About",
-    link: "/about",
-  },
-  {
-    id: 4,
-    name: "Contact",
-    link: "/contact",
-  },
+  { id: 1, name: "Home", link: "home" },
+  { id: 2, name: "Products", link: "products" },
+  { id: 3, name: "Services", link: "services" },
+  { id: 4, name: "About", link: "about" },
+  { id: 5, name: "Contact", link: "contact" },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
@@ -67,12 +53,14 @@ const Navbar = ({ handleOrderPopup }) => {
                   key={menu.id}
                   className="sm:border-none border-b sm:border-b-0"
                 >
-                  <a
-                    href={menu.link}
+                  <Link
+                    to={menu.link}
+                    smooth={true}
+                    duration={500}
                     className="block sm:inline-block py-4 px-6 hover:text-primary duration-200"
                   >
                     {menu.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -95,12 +83,14 @@ const Navbar = ({ handleOrderPopup }) => {
       >
         {Menu.map((menu) => (
           <li key={menu.id} className="border-b">
-            <a
-              href={menu.link}
+            <Link
+              to={menu.link}
+              smooth={true}
+              duration={500}
               className="block py-4 px-6 hover:text-primary duration-200"
             >
               {menu.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

@@ -62,7 +62,7 @@ function FirstApper({ handleOrderPopup }) {
               <h1
                 data-aos-duration="500"
                 data-aos-once="true"
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8"
               >
                 {talk.title}
               </h1>

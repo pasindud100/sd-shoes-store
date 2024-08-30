@@ -1,13 +1,9 @@
 import React from "react";
-
 import Navbar from "./Components/NavBar/NavBar.jsx";
-
-//import Testimonial from "./Components/Testimonial/Testimonial.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import OrderPopup from "./Components/OrderPopup/OrderPopup.jsx";
-
 import ContactUs from "./Components/ContactUs/ContactUs.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import FirstApper from "./Components/FirstAppear/FirstApper.jsx";
@@ -36,19 +32,28 @@ const App = () => {
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
       <Navbar handleOrderPopup={handleOrderPopup} />
-      <MainBanner />
-      <FirstApper handleOrderPopup={handleOrderPopup} />
-      {/* <Hero handleOrderPopup={handleOrderPopup} /> />*/}
-      <TopShoes handleOrderPopup={handleOrderPopup} />
-      <OurService />
 
-      {/* <CoverBanner /> */}
+      <div id="home">
+        <MainBanner />
+        <FirstApper handleOrderPopup={handleOrderPopup} />
+        <TopShoes handleOrderPopup={handleOrderPopup} />
+      </div>
 
-      {/* <PdfReader /> */}
-      <ShoesCategories handleOrderPopup={handleOrderPopup} />
-      {/* <Testimonial />*/}
-      <AboutUs />
-      <ContactUs />
+      <div id="products">
+        <ShoesCategories handleOrderPopup={handleOrderPopup} />
+      </div>
+      <div id="services">
+        <OurService />
+      </div>
+
+      <div id="about">
+        <AboutUs />
+      </div>
+
+      <div id="contact">
+        <ContactUs />
+      </div>
+
       <Footer />
       <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </div>
