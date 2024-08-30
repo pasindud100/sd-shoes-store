@@ -60,11 +60,8 @@ const Navbar = ({ handleOrderPopup }) => {
                 />
               </svg>
             </button>
-            <ul
-              className={`${
-                isOpen ? "block" : "hidden"
-              } sm:flex sm:items-center sm:gap-4 w-full sm:w-auto bg-white dark:bg-gray-900 z-10`}
-            >
+            {/* Expanded Menu for Large Screens */}
+            <ul className="hidden sm:flex sm:items-center sm:gap-4 w-full sm:w-auto bg-white dark:bg-gray-900 z-10">
               {Menu.map((menu) => (
                 <li
                   key={menu.id}
@@ -79,9 +76,10 @@ const Navbar = ({ handleOrderPopup }) => {
                 </li>
               ))}
             </ul>
+            {/* Order Button for Large Screens */}
             <button
               onClick={() => handleOrderPopup()}
-              className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 hidden sm:flex"
+              className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full items-center gap-3 hidden sm:flex"
             >
               Order
               <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
@@ -89,6 +87,23 @@ const Navbar = ({ handleOrderPopup }) => {
           </div>
         </div>
       </div>
+      {/* Expanded Menu for Small Screens */}
+      <ul
+        className={`${
+          isOpen ? "block" : "hidden"
+        } sm:hidden absolute top-[60px] left-0 w-full bg-white dark:bg-gray-900 z-10 border-t border-gray-200 dark:border-gray-700`}
+      >
+        {Menu.map((menu) => (
+          <li key={menu.id} className="border-b">
+            <a
+              href={menu.link}
+              className="block py-4 px-6 hover:text-primary duration-200"
+            >
+              {menu.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
