@@ -1,5 +1,5 @@
 import React from "react";
-import aboutus from "../../Assets/shoes/aboutus.jpg";
+import about from "../../Assets/shoes/about.jpg";
 function AboutUs() {
   return (
     <div>
@@ -7,7 +7,7 @@ function AboutUs() {
         <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div data-aos="fade" class="mt-42 md:mt-0">
             <img
-              src={aboutus}
+              src={about}
               alt="About Us Image"
               class="object-cover rounded-lg shadow-md w-[500px]"
             />
