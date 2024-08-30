@@ -1,8 +1,6 @@
-import React from "react";
-import Logo from "../../assets/website/logo.png";
+import React, { useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
-import { FaCaretDown } from "react-icons/fa";
 
 const Menu = [
   {
@@ -21,92 +19,77 @@ const Menu = [
     link: "/about",
   },
   {
-    id: 2,
+    id: 4,
     name: "Contact",
     link: "/contact",
   },
 ];
 
-const DropdownLinks = [
-  {
-    name: "Kids",
-    link: "/kids",
-  },
-  {
-    name: "Men",
-    link: "/mens",
-  },
-  {
-    name: "Women",
-    link: "/womens",
-  },
-];
-
 const Navbar = ({ handleOrderPopup }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <>
-      <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
-        <div className="container py-3 sm:py-0">
-          <div className="flex justify-between items-center">
-            <div>
-              <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-                Shoes Palace
-              </a>
-            </div>
-            <div className="flex justify-between items-center gap-4">
-              <div>
-                <DarkMode />
-              </div>
-              <ul className="hidden sm:flex items-center gap-4">
-                {Menu.map((menu) => (
-                  <li key={menu.id}>
-                    <a
-                      href={menu.link}
-                      className="inline-block py-4 px-4 hover:text-primary duration-200"
-                    >
-                      {menu.name}
-                    </a>
-                  </li>
-                ))}
-                {/* Simple Dropdown and Links */}
-                <li className="group relative cursor-pointer">
-                  <a
-                    href="/#home"
-                    className="flex h-[72px] items-center gap-[2px]"
-                  >
-                    Products
-                    <span>
-                      <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
-                    </span>
-                  </a>
-                  <div className="absolute -left-9 z-[9999] hidden w-[150px] rounded-md bg-white p-2 text-black group-hover:block  ">
-                    <ul className="space-y-3">
-                      {DropdownLinks.map((data) => (
-                        <li key={data.name}>
-                          <a
-                            className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
-                            href={data.link}
-                          >
-                            {data.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <button
-                onClick={() => handleOrderPopup()}
-                className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
+    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
+      <div className="container py-3 sm:py-0">
+        <div className="flex justify-between items-center">
+          <div>
+            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+              Shoes Palace
+            </a>
+          </div>
+          <div className="flex items-center gap-4">
+            <DarkMode />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary sm:hidden"
+            >
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                Order
-                <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-              </button>
-            </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={
+                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  }
+                />
+              </svg>
+            </button>
+            <ul
+              className={`${
+                isOpen ? "block" : "hidden"
+              } sm:flex sm:items-center sm:gap-4 w-full sm:w-auto bg-white dark:bg-gray-900 z-10`}
+            >
+              {Menu.map((menu) => (
+                <li
+                  key={menu.id}
+                  className="sm:border-none border-b sm:border-b-0"
+                >
+                  <a
+                    href={menu.link}
+                    className="block sm:inline-block py-4 px-6 hover:text-primary duration-200"
+                  >
+                    {menu.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => handleOrderPopup()}
+              className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 hidden sm:flex"
+            >
+              Order
+              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+            </button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
