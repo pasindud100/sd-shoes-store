@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 import { Link } from "react-scroll";
@@ -14,9 +14,24 @@ const Menu = [
 const Navbar = ({ handleOrderPopup }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Handle clicks outside of the navbar to collapse it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest(".navbar-container")) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
-      <div className="container py-3 sm:py-0">
+      <div className="container py-3 sm:py-0 navbar-container">
         <div className="flex justify-between items-center">
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
@@ -88,6 +103,7 @@ const Navbar = ({ handleOrderPopup }) => {
               smooth={true}
               duration={500}
               className="block py-4 px-6 hover:text-primary duration-200"
+              onClick={() => setIsOpen(false)} // Collapse the navbar when a link is clicked
             >
               {menu.name}
             </Link>
