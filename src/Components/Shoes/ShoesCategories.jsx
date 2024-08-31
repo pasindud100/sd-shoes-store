@@ -18,21 +18,21 @@ const booksData = [
     img: men2,
     title: "Leather shoe",
     category: "Men",
-    price: "4750 LKR",
+    price: "3500 LKR",
   },
   {
     id: 3,
     img: men3,
     title: "Leather shoe",
     category: "Men",
-    price: "4750 LKR",
+    price: "3200 LKR",
   },
   {
     id: 4,
     img: men4,
     title: "Leather shoe",
     category: "Men",
-    price: "4750 LKR",
+    price: "2900 LKR",
   },
 ];
 

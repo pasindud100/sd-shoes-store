@@ -1,13 +1,13 @@
 import React from "react";
-import kids1 from "../../assets/shoes/kids1.jpeg";
+import kids2 from "../../assets/shoes/kids2.jpg";
 import men1 from "../../assets/shoes/men1.png";
-import women1 from "../../assets/shoes/women1.png";
+import women2 from "../../assets/shoes/women2.jpg";
 import { FaStar, FaHeart } from "react-icons/fa";
 
 const ServicesData = [
   {
     id: 1,
-    img: kids1,
+    img: kids2,
     title: "Kids' Comfort",
     category: "Kids",
     price: 3500,
@@ -17,11 +17,11 @@ const ServicesData = [
     img: men1,
     title: "Men's Classic",
     category: "Men",
-    price: 7500,
+    price: 4750,
   },
   {
     id: 3,
-    img: women1,
+    img: women2,
     title: "Women's Eleg",
     category: "Women",
     price: 6800,

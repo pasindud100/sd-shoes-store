@@ -13,10 +13,10 @@ function AboutUs() {
             />
           </div>
           <div data-aos="fade" class="max-w-lg">
-            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl dark:text-white">
               About Us
             </h2>
-            <p class="mt-4 text-gray-600 text-md text-justify my-[20px]">
+            <p class="mt-4 text-gray-600 dark:text-yellow-50 text-md text-justify my-[20px]">
               In today’s fast-paced world, convenience is key. That’s why Shoes
               Palace offers both in-store and online shopping experiences to fit
               your lifestyle. Whether you prefer to browse our latest arrivals
