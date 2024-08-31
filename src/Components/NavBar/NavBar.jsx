@@ -30,7 +30,7 @@ const Navbar = ({ handleOrderPopup }) => {
   }, [isOpen]);
 
   return (
-    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
+    <div className="fixed top-0 left-0 w-full z-50 shadow-md bg-slate-200 dark:bg-gray-900 dark:text-white duration-200">
       <div className="container py-3 sm:py-0 navbar-container">
         <div className="flex justify-between items-center">
           <div>
@@ -38,7 +38,7 @@ const Navbar = ({ handleOrderPopup }) => {
               href="#"
               className="font-bold text-2xl sm:text-3xl flex gap-2 text-blue-900 dark:text-stone-400"
             >
-              Shoes{" "}
+              Shoes
               <span className="font-thin text-blue-500 dark:text-stone-300 italic">
                 Palace
               </span>
@@ -68,7 +68,7 @@ const Navbar = ({ handleOrderPopup }) => {
               </svg>
             </button>
             {/* Expanded Menu for Large Screens */}
-            <ul className="hidden sm:flex sm:items-center sm:gap-4 w-full sm:w-auto bg-white dark:bg-gray-900 z-10">
+            <ul className="hidden sm:flex sm:items-center sm:gap-4 w-full sm:w-auto bg-slate-200 dark:bg-gray-900 z-10">
               {Menu.map((menu) => (
                 <li
                   key={menu.id}
@@ -88,7 +88,7 @@ const Navbar = ({ handleOrderPopup }) => {
             {/* Order Button for Large Screens */}
             <button
               onClick={() => handleOrderPopup()}
-              className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full items-center gap-3 hidden sm:flex"
+              className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-md items-center gap-3 hidden sm:flex"
             >
               Order
               <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />

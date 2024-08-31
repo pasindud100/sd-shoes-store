@@ -42,13 +42,13 @@ const ShoesCategories = ({ handleOrderPopup }) => {
       <div className="h-[120px] bg-slate-300 text-black  text-center  dark:bg-gray-950 dark:text-white">
         <p className="text-3xl sm:text-4xl font-bold  text-center">category</p>
         <div className="flex justify-around mt-[15px]">
-          <button className="bg-red-500 hover:scale-105 duration-100 text-white py-2 px-[25px] rounded-sm  hover:bg-red-900 hover:text-black">
+          <button className="bg-red-500 hover:scale-105 duration-100 text-white py-2 w-[100px] rounded-md  hover:bg-red-900 hover:text-black">
             Kids
           </button>
-          <button className="bg-red-500 hover:scale-105 duration-100 text-white py-2 px-[25px] rounded-sm group-hover:bg-white group-hover:text-primary">
+          <button className="bg-red-500 hover:scale-105 duration-100 text-white py-2 w-[100px] rounded-md group-hover:bg-white group-hover:text-primary">
             Men
           </button>
-          <button className="bg-red-500 hover:scale-105 duration-100 text-white py-2 px-[25px] rounded-sm  group-hover:bg-white group-hover:text-primary">
+          <button className="bg-red-500 hover:scale-105 duration-100 text-white py-2 w-[100px] rounded-md  group-hover:bg-white group-hover:text-primary">
             Women
           </button>
         </div>
@@ -94,7 +94,7 @@ const ShoesCategories = ({ handleOrderPopup }) => {
                       <FaHeart className="text-red-500 cursor-pointer" />
                     </div>
                     <button
-                      className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-full mt-[20px] group-hover:bg-white group-hover:text-primary"
+                      className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-md  mt-[20px] group-hover:bg-white group-hover:text-primary"
                       onClick={handleOrderPopup}
                     >
                       Order Now
@@ -104,7 +104,7 @@ const ShoesCategories = ({ handleOrderPopup }) => {
               ))}
             </div>
             <div className="flex justify-center mt-[15px]">
-              <button className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary">
+              <button className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-md  mt-4 group-hover:bg-white group-hover:text-primary">
                 See more...
               </button>
             </div>

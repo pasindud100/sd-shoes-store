@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import kids1 from "../../assets/shoes/kids1.png";
+import kids3 from "../../assets/shoes/kids3.png";
 import men1 from "../../assets/shoes/men1.png";
 import women1 from "../../assets/shoes/women1.png";
 
@@ -9,7 +9,7 @@ const talks = [
     title: "Step into Adventure",
     description:
       "Comfort meets durability in our kids' shoe collection. Perfect for little explorers, every step is an adventure.",
-    img: kids1,
+    img: kids3,
   },
   {
     id: 2,
@@ -49,8 +49,22 @@ function FirstApper({ handleOrderPopup }) {
   }, [activeTalk]);
 
   return (
-    <div className=" bg-gray-200  flex items-center justify-center min-h-screen  dark:bg-gray-800 dark:text-white duration-200">
-      <div className="flex flex-col md:flex-row mx-[100px] items-center justify-center w-full p-5">
+    <div className=" bg-gray-200  flex items-center justify-center min-h-[400px]  dark:bg-gray-800 dark:text-white duration-200">
+      <div className="flex flex-col md:flex-row mx-[100px] items-center sm:gap-8 justify-center w-full p-3">
+        {talks.map((talk, i) => (
+          <div
+            className={`transition-all duration-500 ease-in-out flex flex-col items-center justify-center ${
+              activeTalk === i ? "block" : "hidden"
+            }`}
+            key={talk.id}
+          >
+            <img
+              src={talk.img}
+              alt={talk.title}
+              className="w-[250px] h-[200px] sm:w-[300px] sm:h-[260px] rounded-lg"
+            />
+          </div>
+        ))}
         <div className="flex flex-col items-center md:items-start md:w-1/2">
           {talks.map((talk, i) => (
             <div
@@ -62,7 +76,7 @@ function FirstApper({ handleOrderPopup }) {
               <h1
                 data-aos-duration="500"
                 data-aos-once="true"
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4"
               >
                 {talk.title}
               </h1>
@@ -77,29 +91,6 @@ function FirstApper({ handleOrderPopup }) {
             </div>
           ))}
         </div>
-
-        {talks.map((talk, i) => (
-          <div
-            className={`transition-all duration-500 ease-in-out flex flex-col items-center justify-center ${
-              activeTalk === i ? "block" : "hidden"
-            }`}
-            key={talk.id}
-          >
-            <img
-              src={talk.img}
-              alt={talk.title}
-              className="w-[300px] h-[300px] rounded-lg"
-            />
-            <div>
-              <button
-                onClick={handleOrderPopup}
-                className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 mt-2 text-white py-2 px-4 rounded-3xl"
-              >
-                Order Now
-              </button>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

@@ -55,7 +55,7 @@ const TopShoes = ({ handleOrderPopup }) => {
                   <img
                     src={service.img}
                     alt={service.title}
-                    className="max-w-[150px] mx-auto transform -translate-y-14
+                    className="max-w-[200px] h-[150px]  mx-auto transform -translate-y-14
                     group-hover:scale-105 duration-300 shadow-md"
                   />
                 </div>
@@ -75,7 +75,7 @@ const TopShoes = ({ handleOrderPopup }) => {
                     <FaHeart className="text-red-500 cursor-pointer" />
                   </div>
                   <button
-                    className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
+                    className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-md  mt-4 group-hover:bg-white group-hover:text-primary"
                     onClick={handleOrderPopup}
                   >
                     Order Now
@@ -85,7 +85,7 @@ const TopShoes = ({ handleOrderPopup }) => {
             ))}
           </div>
           <div className="flex justify-center mt-[15px]">
-            <button className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary">
+            <button className="bg-primary hover:scale-105 duration-100 text-white py-1 px-4 rounded-md  mt-4 group-hover:bg-white group-hover:text-primary">
               See more...
             </button>
           </div>
