@@ -34,8 +34,14 @@ const Navbar = ({ handleOrderPopup }) => {
       <div className="container py-3 sm:py-0 navbar-container">
         <div className="flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              Shoes Palace
+            <a
+              href="#"
+              className="font-bold text-2xl sm:text-3xl flex gap-2 text-blue-900 dark:text-stone-400"
+            >
+              Shoes{" "}
+              <span className="font-thin text-blue-500 dark:text-stone-300 italic">
+                Palace
+              </span>
             </a>
           </div>
           <div className="flex items-center gap-4">

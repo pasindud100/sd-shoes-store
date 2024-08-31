@@ -1,5 +1,8 @@
 import React from "react";
 import men1 from "../../assets/shoes/men1.png";
+import men2 from "../../assets/shoes/men2.jpg";
+import men3 from "../../assets/shoes/men3.jpg";
+import men4 from "../../assets/shoes/men4.jpg";
 import { FaStar, FaHeart } from "react-icons/fa6";
 
 const booksData = [
@@ -12,22 +15,22 @@ const booksData = [
   },
   {
     id: 2,
-    img: men1,
-    title: "Men's Classic",
+    img: men2,
+    title: "Leather shoe",
     category: "Men",
     price: "4750 LKR",
   },
   {
     id: 3,
-    img: men1,
-    title: "Men's Classic",
+    img: men3,
+    title: "Leather shoe",
     category: "Men",
     price: "4750 LKR",
   },
   {
     id: 4,
-    img: men1,
-    title: "Men's Classic",
+    img: men4,
+    title: "Leather shoe",
     category: "Men",
     price: "4750 LKR",
   },
