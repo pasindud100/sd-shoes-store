@@ -33,7 +33,7 @@ const App = () => {
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
       {/* Add padding-top equal to the height of the navbar */}
       <Navbar handleOrderPopup={handleOrderPopup} />
-      <div id="home">
+      <div className="mt-[60px]" id="home">
         <MainBanner />
         <FirstApper handleOrderPopup={handleOrderPopup} />
         <TopShoes handleOrderPopup={handleOrderPopup} />
