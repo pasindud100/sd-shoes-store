@@ -1,8 +1,9 @@
-import React from "react";
-import Navbar from "./Components/NavBar/NavBar.jsx";
-import Footer from "./Components/Footer/Footer.jsx";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import Navbar from "./Components/NavBar/NavBar.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
 import OrderPopup from "./Components/OrderPopup/OrderPopup.jsx";
 import ContactUs from "./Components/ContactUs/ContactUs.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
@@ -13,13 +14,13 @@ import OurService from "./Components/Service/OurService.jsx";
 import ShoesCategories from "./Components/Shoes/ShoesCategories.jsx";
 
 const App = () => {
-  const [orderPopup, setOrderPopup] = React.useState(false);
+  const [orderPopup, setOrderPopup] = useState(false);
 
   const handleOrderPopup = () => {
     setOrderPopup(!orderPopup);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 800,
